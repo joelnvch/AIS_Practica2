@@ -74,7 +74,12 @@ class SystemTest {
 	
 	@DisplayName("Primer jugador en poner ficha gana")
 	@Test
-	void primeroEnJugarGana() {					
+	void primeroEnJugarGana() {	
+		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
+		waitBoard1.until(ExpectedConditions.elementToBeClickable(By.id("cell-1")));
+		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
+		waitBoard2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		
 		WebElement cell1=browser1.findElement(By.id("cell-1"));
 		cell1.click();
 		WebElement cell0=browser2.findElement(By.id("cell-0"));
@@ -86,10 +91,10 @@ class SystemTest {
 		WebElement cell7=browser1.findElement(By.id("cell-7"));		
 		cell7.click();
 		
-		WebDriverWait wait1 = new WebDriverWait(browser1, 10);
-		wait1.until(ExpectedConditions.alertIsPresent());
-		WebDriverWait wait2 = new WebDriverWait(browser2, 10);
-		wait2.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert1 = new WebDriverWait(browser1, 30);
+		waitAlert1.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert2 = new WebDriverWait(browser2, 30);
+		waitAlert2.until(ExpectedConditions.alertIsPresent());
 		    		  		
 		String alert1=browser1.switchTo().alert().getText();
 		String alert2=browser2.switchTo().alert().getText();
@@ -101,7 +106,12 @@ class SystemTest {
 	
 	@DisplayName("Primer jugador en poner ficha pierde")
 	@Test
-	void primeroEnJugarPierde() {						
+	void primeroEnJugarPierde() {
+		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
+		waitBoard1.until(ExpectedConditions.elementToBeClickable(By.id("cell-2")));
+		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
+		waitBoard2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		
 		WebElement cell2=browser1.findElement(By.id("cell-2"));
 		cell2.click();
 		WebElement cell0=browser2.findElement(By.id("cell-0"));
@@ -115,10 +125,10 @@ class SystemTest {
 		WebElement cell8=browser2.findElement(By.id("cell-8"));
 		cell8.click();
 		
-		WebDriverWait wait1 = new WebDriverWait(browser1, 10);
-		wait1.until(ExpectedConditions.alertIsPresent());
-		WebDriverWait wait2 = new WebDriverWait(browser2, 10);
-		wait2.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert1 = new WebDriverWait(browser1, 30);
+		waitAlert1.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert2 = new WebDriverWait(browser2, 30);
+		waitAlert2.until(ExpectedConditions.alertIsPresent());
 		    		  		
 		String alert1=browser1.switchTo().alert().getText();
 		String alert2=browser2.switchTo().alert().getText();
@@ -130,7 +140,12 @@ class SystemTest {
 	
 	@DisplayName("Los jugadores empatan")
 	@Test
-	void empate() {						
+	void empate() {
+		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
+		waitBoard1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
+		waitBoard2.until(ExpectedConditions.elementToBeClickable(By.id("cell-1")));
+		
 		WebElement cell0=browser1.findElement(By.id("cell-0"));
 		cell0.click();
 		WebElement cell1=browser2.findElement(By.id("cell-1"));
@@ -150,10 +165,10 @@ class SystemTest {
 		WebElement cell2=browser1.findElement(By.id("cell-2"));		
 		cell2.click();
 		
-		WebDriverWait wait1 = new WebDriverWait(browser1, 10);
-		wait1.until(ExpectedConditions.alertIsPresent());
-		WebDriverWait wait2 = new WebDriverWait(browser2, 10);
-		wait2.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert1 = new WebDriverWait(browser1, 30);
+		waitAlert1.until(ExpectedConditions.alertIsPresent());
+		WebDriverWait waitAlert2 = new WebDriverWait(browser2, 30);
+		waitAlert2.until(ExpectedConditions.alertIsPresent());
 		    		  		
 		String alert1=browser1.switchTo().alert().getText();
 		String alert2=browser2.switchTo().alert().getText();
