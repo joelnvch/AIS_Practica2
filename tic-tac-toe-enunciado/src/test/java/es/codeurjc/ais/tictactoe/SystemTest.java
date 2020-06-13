@@ -74,7 +74,7 @@ class SystemTest {
 	
 	@DisplayName("Primer jugador en poner ficha gana")
 	@Test
-	void primeroEnJugarGana() {	
+	void primeroEnJugarGanaTest() {	
 		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
 		waitBoard1.until(ExpectedConditions.presenceOfElementLocated(By.id("cell-1")));
 		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
@@ -106,7 +106,7 @@ class SystemTest {
 	
 	@DisplayName("Primer jugador en poner ficha pierde")
 	@Test
-	void primeroEnJugarPierde() {
+	void primeroEnJugarPierdeTest() {
 		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
 		waitBoard1.until(ExpectedConditions.presenceOfElementLocated(By.id("cell-2")));
 		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
@@ -140,7 +140,7 @@ class SystemTest {
 	
 	@DisplayName("Los jugadores empatan")
 	@Test
-	void empate() {
+	void empateTest() {
 		WebDriverWait waitBoard1 = new WebDriverWait(browser1, 20);
 		waitBoard1.until(ExpectedConditions.presenceOfElementLocated(By.id("cell-0")));
 		WebDriverWait waitBoard2 = new WebDriverWait(browser2, 20);
