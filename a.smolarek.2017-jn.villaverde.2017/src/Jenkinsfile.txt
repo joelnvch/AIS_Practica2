@@ -1,0 +1,31 @@
+pipeline {
+
+  tools {
+ 
+    maven "M3"
+ 
+  }
+ 
+  agent any
+ 
+  stages {
+
+ 
+    stage("Test") {
+
+      steps {
+ 
+        script {
+        
+          sh "cd /ais/a.smolarek.2017-jn.villaverde.2017/; mvn test"
+
+        }
+ 
+      }
+
+    }
+ 
+ }
+ 
+
+}
